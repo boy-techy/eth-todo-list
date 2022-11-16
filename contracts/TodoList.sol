@@ -11,12 +11,19 @@ contract TodoList {
 
     mapping(uint => Task) public tasks;
 
+    event TaskCreated (
+        uint id,
+        string content,
+        bool completed
+    );
+
     constructor() public {
-        createtask("Check out the default task");
+        createTask("Check out the default task");
     }
 
-    function createtask(string memory _content) public {
+    function createTask(string memory _content) public {
         taskCount ++;
         tasks[taskCount] = Task(taskCount, _content, false);
+        emit TaskCreated(taskCount, _content, false);
     }
 }
