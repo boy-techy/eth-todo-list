@@ -17,6 +17,11 @@ contract TodoList {
         bool completed
     );
 
+    event ToggleTask(
+        uint id,
+        bool completed
+    );
+
     constructor() public {
         createTask("Check out the default task");
     }
@@ -25,5 +30,12 @@ contract TodoList {
         taskCount ++;
         tasks[taskCount] = Task(taskCount, _content, false);
         emit TaskCreated(taskCount, _content, false);
+    }
+
+    function toggleTaskComplete(uint _id) public {
+        Task memory _task = tasks[_id];
+        _task.completed = !_task.completed;
+        tasks[_id] = _task;
+        emit ToggleTask(_id, _task.completed);
     }
 }
