@@ -11,18 +11,18 @@ Prerequisite
 <img width="378" alt="image" src="https://user-images.githubusercontent.com/13551031/202321565-c062b353-6632-475e-b5c5-c875038efead.png">
 
 
-##install dependency
+## install dependency
 - npm i
 
-#compile contracts
+## compile contracts
 - truffle compile
 
-#migrate contracts
+## migrate contracts
 - truffle migrate (--reset)
 
 
-#Run test cases
+## Run test cases
 - truffle test
 
-#check truffle console
+## check truffle console
 - truffle console
